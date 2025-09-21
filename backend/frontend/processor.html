@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Processor Dashboard — HerbTrace</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f8e9; margin: 0; }
+    nav { background: #2E8B57; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container .logo { font-weight: bold; font-size: 1.5em; }
+    .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; }
+    .nav-links li a { color: white; text-decoration: none; font-weight: 500; }
+    .nav-links li a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 30px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    h2 { color: #2E8B57; text-align: center; margin-bottom: 25px; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+    .form-group input, .form-group select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; box-sizing: border-box; }
+    button { padding: 12px 20px; background: #2E8B57; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #246b46; }
+    .batch-card { border-left: 4px solid #2E8B57; padding: 15px; margin: 15px 0; border-radius: 6px; background: #f7f9fb; }
+    .error { color: red; margin-bottom: 10px; font-weight: 500; }
+    .success { color: green; margin-bottom: 10px; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">HerbTrace</div>
+      <ul class="nav-links">
+        <li><a href="processor.html">Dashboard</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Processor Dashboard</h2>
+    <div id="message"></div>
+
+    <h3>Pending Batches</h3>
+    <div id="batches"></div>
+
+    <h3 style="margin-top:30px;">Process Batch</h3>
+    <div class="form-group">
+      <label for="batchId">Select Batch</label>
+      <select id="batchId"></select>
+    </div>
+
+    <div class="form-group">
+      <label for="facility">Facility Name</label>
+      <input type="text" id="facility" placeholder="Enter facility name">
+    </div>
+
+    <div class="form-group">
+      <label for="facilityLocation">Facility Location</label>
+      <input type="text" id="facilityLocation" placeholder="Enter location">
+    </div>
+
+    <div class="form-group">
+      <label for="managerName">Manager Name</label>
+      <input type="text" id="managerName" placeholder="Enter manager name">
+    </div>
+
+    <div class="form-group">
+      <label for="processType">Process Type</label>
+      <input type="text" id="processType" placeholder="Enter process type">
+    </div>
+
+    <button onclick="processBatch()">Process Batch</button>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('token');
+    if (!token) window.location.href = 'login.html';
+
+    async function loadBatches() {
+      const res = await fetch('/api/processor/dashboard', { headers: { 'Authorization': `Bearer ${token}` } });
+      const data = await res.json();
+      const container = document.getElementById('batches');
+      const selectBatch = document.getElementById('batchId');
+      container.innerHTML = '';
+      selectBatch.innerHTML = '<option value="">Select a batch</option>';
+
+      if (data.ok) {
+        data.pending.forEach(batch => {
+          // Add card
+          const div = document.createElement('div');
+          div.className = 'batch-card';
+          div.innerHTML = `<strong>Batch ID:</strong> ${batch.batchId}<br>
+                           <strong>Species:</strong> ${batch.species}<br>
+                           <strong>Quality:</strong> ${batch.quality}<br>
+                           <strong>Status:</strong> ${batch.status}`;
+          container.appendChild(div);
+
+          // Add to select
+          const opt = document.createElement('option');
+          opt.value = batch.batchId;
+          opt.textContent = batch.batchId;
+          selectBatch.appendChild(opt);
+        });
+      }
+    }
+
+    async function processBatch() {
+      const batchId = document.getElementById('batchId').value;
+      const facility = document.getElementById('facility').value;
+      const facilityLocation = document.getElementById('facilityLocation').value;
+      const managerName = document.getElementById('managerName').value;
+      const processType = document.getElementById('processType').value;
+
+      if (!batchId) return alert('Please select a batch');
+
+      const res = await fetch('/api/processor/process', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ batchId, facility, facilityLocation, managerName, processType })
+      });
+
+      const data = await res.json();
+      const msgDiv = document.getElementById('message');
+      if (data.ok) {
+        msgDiv.innerHTML = `<div class="success">Batch ${batchId} processed successfully!</div>`;
+        loadBatches();
+      } else {
+        msgDiv.innerHTML = `<div class="error">${data.error}</div>`;
+      }
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = 'login.html';
+    }
+
+    loadBatches();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Generator — HerbTrace</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+     nav { background: #2E8B57; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container .logo { font-weight: bold; font-size: 1.5em; }
+    .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; }
+    .nav-links li a { color: white; text-decoration: none; font-weight: 500; }
+    .nav-links li a:hover { text-decoration: underline; }
+    /* Container styling */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    button {
+      background: #2E8B57;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background: #246b46;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    #qrResult {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">HerbTrace</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="consumer.html">Consumer</a></li>
+        <li><a href="qr.html">QR Generator</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2 style="color: #2E8B57;">Generate QR Code</h2>
+    <input type="text" id="batchId" placeholder="Enter Batch ID">
+    <button onclick="generateQR()">Generate</button>
+    <div id="qrResult"></div>
+  </div>
+
+  <script>
+    async function generateQR() {
+      const batchId = document.getElementById('batchId').value.trim();
+      if(!batchId) return alert('Enter batch ID');
+      const res = await fetch(`/qr/${batchId}`);
+      const html = await res.text();
+      document.getElementById('qrResult').innerHTML = html;
+    }
+  </script>
+</body>
+</html>

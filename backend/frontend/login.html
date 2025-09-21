@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login — HerbTrace</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f1f8e9);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      background: #2E8B57;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-container .logo { font-weight: bold; font-size: 1.5em; }
+    .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; }
+    .nav-links li a { color: white; text-decoration: none; font-weight: 500; }
+    .nav-links li a:hover { text-decoration: underline; }
+
+    .login-container {
+      max-width: 400px;
+      margin: 60px auto;
+      padding: 40px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .login-container h2 {
+      color: #2E8B57;
+      margin-bottom: 25px;
+      font-size: 1.8em;
+    }
+
+    .login-container p {
+      color: #555;
+      font-size: 0.95em;
+      margin-bottom: 20px;
+    }
+
+    .login-container input, .login-container select {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 14px;
+      background: #2E8B57;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-container button:hover {
+      background: #246b46;
+    }
+
+    .error {
+      color: red;
+      text-align: center;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+
+    .info-text {
+      font-size: 0.9em;
+      color: #777;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: auto;
+      padding: 12px 0;
+      color: #555;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">HerbTrace</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="consumer.html">Consumer</a></li>
+        <li><a href="qr.html">QR Generator</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="login-container">
+    <h2>Login to HerbTrace</h2>
+    <p class="info-text">Select your role and enter credentials to access your dashboard.</p>
+    <div class="error" id="error"></div>
+
+    <!-- Role selector -->
+    <select id="role" required>
+      <option value="">Select your role</option>
+      <option value="farmer">Farmer</option>
+      <option value="processor">Processor</option>
+      <option value="lab">Lab Manager</option>
+    </select>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <footer>
+    &copy; 2025 HerbTrace. All rights reserved.
+  </footer>
+
+  <script>
+    async function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const role = document.getElementById('role').value;
+      const errorDiv = document.getElementById('error');
+
+      if (!role) {
+        errorDiv.textContent = 'Please select a role';
+        return;
+      }
+
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json' },
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await res.json();
+      if (data.ok) {
+        if (data.role !== role) {
+          errorDiv.textContent = `Role mismatch. Your assigned role is "${data.role}"`;
+          return;
+        }
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('role', data.role);
+        if (data.role === 'farmer') window.location.href = 'farmer.html';
+        else if (data.role === 'processor') window.location.href = 'processor.html';
+        else if (data.role === 'lab') window.location.href = 'lab.html';
+      } else {
+        errorDiv.textContent = data.error;
+      }
+    }
+  </script>
+</body>
+</html>

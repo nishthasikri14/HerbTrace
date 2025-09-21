@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Farmer Dashboard — HerbTrace</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f8e9; margin: 0; }
+    nav { background: #2E8B57; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container .logo { font-weight: bold; font-size: 1.5em; }
+    .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; }
+    .nav-links li a { color: white; text-decoration: none; font-weight: 500; }
+    .nav-links li a:hover { text-decoration: underline; }
+
+    .container { max-width: 900px; margin: 30px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    h2 { color: #2E8B57; text-align: center; margin-bottom: 25px; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+    .form-group input, .form-group select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; box-sizing: border-box; }
+    button { padding: 12px 20px; background: #2E8B57; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #246b46; }
+    .batch-card { border-left: 4px solid #2E8B57; padding: 15px; margin: 15px 0; border-radius: 6px; background: #f7f9fb; }
+    .error { color: red; margin-bottom: 10px; font-weight: 500; }
+    .success { color: green; margin-bottom: 10px; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">HerbTrace</div>
+      <ul class="nav-links">
+        <li><a href="farmer.html">Dashboard</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Farmer Dashboard</h2>
+
+    <div id="message"></div>
+
+    <h3>Add New Herb Collection</h3>
+    <div class="form-group">
+      <label for="species">Species</label>
+      <select id="species">
+        <option value="Ashwagandha">Ashwagandha</option>
+        <option value="Tulsi">Tulsi</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group" id="otherSpeciesDiv" style="display:none;">
+      <label for="otherSpecies">Specify Species</label>
+      <input type="text" id="otherSpecies" placeholder="Enter species">
+    </div>
+
+    <div class="form-group">
+      <label for="quality">Quality</label>
+      <select id="quality">
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Good">Good</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="lat">Latitude</label>
+      <input type="text" id="lat" placeholder="Enter latitude">
+    </div>
+
+    <div class="form-group">
+      <label for="long">Longitude</label>
+      <input type="text" id="long" placeholder="Enter longitude">
+    </div>
+
+    <div class="form-group">
+      <label for="image">Upload Image (optional)</label>
+      <input type="file" id="image">
+    </div>
+
+    <button onclick="addHerb()">Add Collection</button>
+
+    <div id="batches"></div>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('token');
+    if (!token) window.location.href = 'login.html';
+
+    // Show other species input
+    document.getElementById('species').addEventListener('change', () => {
+      if (document.getElementById('species').value === 'other') document.getElementById('otherSpeciesDiv').style.display = 'block';
+      else document.getElementById('otherSpeciesDiv').style.display = 'none';
+    });
+
+    async function addHerb() {
+      const species = document.getElementById('species').value;
+      const otherSpecies = document.getElementById('otherSpecies').value;
+      const quality = document.getElementById('quality').value;
+      const lat = document.getElementById('lat').value;
+      const long = document.getElementById('long').value;
+      const imageFile = document.getElementById('image').files[0];
+      const formData = new FormData();
+      formData.append('species', species);
+      formData.append('otherSpecies', otherSpecies);
+      formData.append('quality', quality);
+      formData.append('lat', lat);
+      formData.append('long', long);
+      if (imageFile) formData.append('image', imageFile);
+
+      const res = await fetch('/api/farmer/add-herb', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}` },
+        body: formData
+      });
+      const data = await res.json();
+      const msgDiv = document.getElementById('message');
+      if (data.ok) {
+        msgDiv.innerHTML = `<div class="success">Batch Added! ID: ${data.batchId}</div>`;
+        loadBatches();
+      } else {
+        msgDiv.innerHTML = `<div class="error">${data.error}</div>`;
+      }
+    }
+
+    async function loadBatches() {
+      const res = await fetch('/api/processor/dashboard', { headers: { 'Authorization': `Bearer ${token}` } });
+      const data = await res.json();
+      const container = document.getElementById('batches');
+      container.innerHTML = '';
+      if (data.ok) {
+        data.pending.forEach(batch => {
+          const div = document.createElement('div');
+          div.className = 'batch-card';
+          div.innerHTML = `<strong>Batch ID:</strong> ${batch.batchId}<br>
+                           <strong>Species:</strong> ${batch.species}<br>
+                           <strong>Quality:</strong> ${batch.quality}<br>
+                           <strong>Status:</strong> ${batch.status}`;
+          container.appendChild(div);
+        });
+      }
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = 'login.html';
+    }
+
+    loadBatches();
+  </script>
+</body>
+</html>

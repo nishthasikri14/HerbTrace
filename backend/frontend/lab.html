@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab Dashboard — HerbTrace</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f8e9; margin: 0; }
+    nav { background: #2E8B57; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container .logo { font-weight: bold; font-size: 1.5em; }
+    .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; }
+    .nav-links li a { color: white; text-decoration: none; font-weight: 500; }
+    .nav-links li a:hover { text-decoration: underline; }
+
+    .container { max-width: 1000px; margin: 30px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    h2 { color: #2E8B57; text-align: center; margin-bottom: 25px; }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-weight: bold; margin-bottom: 5px; }
+    .form-group input, .form-group select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; box-sizing: border-box; }
+    button { padding: 12px 20px; background: #2E8B57; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    button:hover { background: #246b46; }
+    .batch-card { border-left: 4px solid #2E8B57; padding: 15px; margin: 15px 0; border-radius: 6px; background: #f7f9fb; }
+    .error { color: red; margin-bottom: 10px; font-weight: 500; }
+    .success { color: green; margin-bottom: 10px; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">HerbTrace</div>
+      <ul class="nav-links">
+        <li><a href="lab.html">Dashboard</a></li>
+        <li><a href="#" onclick="logout()">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h2>Lab Dashboard</h2>
+    <div id="message"></div>
+
+    <h3>Pending Processed Batches</h3>
+    <div id="batches"></div>
+
+    <h3 style="margin-top:30px;">Upload Lab Report</h3>
+    <div class="form-group">
+      <label for="batchId">Select Batch</label>
+      <select id="batchId"></select>
+    </div>
+
+    <div class="form-group">
+      <label for="labName">Lab Name</label>
+      <input type="text" id="labName" placeholder="Enter lab name">
+    </div>
+
+    <div class="form-group">
+      <label for="labManagerName">Lab Manager Name</label>
+      <input type="text" id="labManagerName" placeholder="Enter lab manager name">
+    </div>
+
+    <div class="form-group">
+      <label for="labLocation">Lab Location</label>
+      <input type="text" id="labLocation" placeholder="Enter lab location">
+    </div>
+
+    <div class="form-group">
+      <label for="resultStatus">Result Status</label>
+      <select id="resultStatus">
+        <option value="">Select result</option>
+        <option value="pass">Pass</option>
+        <option value="fail">Fail</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="reportFile">Upload PDF Report</label>
+      <input type="file" id="reportFile" accept="application/pdf">
+    </div>
+
+    <button onclick="uploadReport()">Submit Lab Report</button>
+  </div>
+
+  <script>
+    const token = localStorage.getItem('token');
+    if (!token) window.location.href = 'login.html';
+
+    async function loadBatches() {
+      const res = await fetch('/api/lab/dashboard', { headers: { 'Authorization': `Bearer ${token}` } });
+      const data = await res.json();
+      const container = document.getElementById('batches');
+      const selectBatch = document.getElementById('batchId');
+      container.innerHTML = '';
+      selectBatch.innerHTML = '<option value="">Select a batch</option>';
+
+      if (data.ok) {
+        data.pending.forEach(batch => {
+          // Add card
+          const div = document.createElement('div');
+          div.className = 'batch-card';
+          div.innerHTML = `<strong>Batch ID:</strong> ${batch.batchId}<br>
+                           <strong>Species:</strong> ${batch.species}<br>
+                           <strong>Status:</strong> ${batch.status}<br>
+                           <strong>Processor:</strong> ${batch.processor || 'N/A'}`;
+          container.appendChild(div);
+
+          // Add to select
+          const opt = document.createElement('option');
+          opt.value = batch.batchId;
+          opt.textContent = batch.batchId;
+          selectBatch.appendChild(opt);
+        });
+      }
+    }
+
+    async function uploadReport() {
+      const batchId = document.getElementById('batchId').value;
+      const labName = document.getElementById('labName').value;
+      const labManagerName = document.getElementById('labManagerName').value;
+      const labLocation = document.getElementById('labLocation').value;
+      const resultStatus = document.getElementById('resultStatus').value;
+      const fileInput = document.getElementById('reportFile');
+
+      if (!batchId) return alert('Please select a batch');
+      if (!fileInput.files[0]) return alert('Please select a PDF file');
+
+      const formData = new FormData();
+      formData.append('batchId', batchId);
+      formData.append('labName', labName);
+      formData.append('labManagerName', labManagerName);
+      formData.append('labLocation', labLocation);
+      formData.append('resultStatus', resultStatus);
+      formData.append('file', fileInput.files[0]);
+
+      const res = await fetch('/api/lab/upload-report', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${token}` },
+        body: formData
+      });
+
+      const data = await res.json();
+      const msgDiv = document.getElementById('message');
+      if (data.ok) {
+        msgDiv.innerHTML = `<div class="success">Batch ${batchId} report uploaded successfully!</div>`;
+        loadBatches();
+        document.getElementById('reportFile').value = '';
+      } else {
+        msgDiv.innerHTML = `<div class="error">${data.error}</div>`;
+      }
+    }
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = 'login.html';
+    }
+
+    loadBatches();
+  </script>
+</body>
+</html>
+

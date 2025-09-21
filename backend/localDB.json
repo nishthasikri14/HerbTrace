@@ -1,0 +1,218 @@
+{
+  "BATCH_1758476558806_d28529": [
+    {
+      "type": "collection",
+      "timestamp": 1758476558807
+    }
+  ],
+  "BATCH_1758477420229_4e0910": [
+    {
+      "type": "collection",
+      "timestamp": 1758477420230
+    }
+  ],
+  "BATCH_1758477969309_47f273": [
+    {
+      "type": "collection",
+      "timestamp": 1758477969311
+    }
+  ],
+  "BATCH1758481129605": [
+    {
+      "type": "collection",
+      "timestamp": 1758481129605
+    }
+  ],
+  "BATCH1": [
+    {
+      "type": "collection",
+      "collector": "Farmer 1",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 28.623900000000003,
+      "long": 77.21900000000001,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "quality",
+      "labName": "BioTest Labs",
+      "parameter": "Purity",
+      "resultValue": "97%",
+      "ipfsHash": "QmW6Prbx8n55UJJesigs84uiEJsp5zBxbLDT8mgPzC3kHV",
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "processing",
+      "stepName": "Packaging",
+      "facility": "Packaging Unit 1",
+      "details": "Packed in 110g pouches",
+      "timestamp": 1758481328097
+    }
+  ],
+  "BATCH2": [
+    {
+      "type": "collection",
+      "collector": "Farmer 2",
+      "species": "Tulsi",
+      "quality": "Medium",
+      "lat": 28.6339,
+      "long": 77.229,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "quality",
+      "labName": "BioTest Labs",
+      "parameter": "Purity",
+      "resultValue": "96%",
+      "ipfsHash": null,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "processing",
+      "stepName": "Packaging",
+      "facility": "Packaging Unit 2",
+      "details": "Packed in 120g pouches",
+      "timestamp": 1758481328097
+    }
+  ],
+  "BATCH3": [
+    {
+      "type": "collection",
+      "collector": "Farmer 3",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 28.643900000000002,
+      "long": 77.239,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "quality",
+      "labName": "BioTest Labs",
+      "parameter": "Purity",
+      "resultValue": "95%",
+      "ipfsHash": null,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "processing",
+      "stepName": "Packaging",
+      "facility": "Packaging Unit 3",
+      "details": "Packed in 130g pouches",
+      "timestamp": 1758481328097
+    }
+  ],
+  "BATCH4": [
+    {
+      "type": "collection",
+      "collector": "Farmer 4",
+      "species": "Tulsi",
+      "quality": "Medium",
+      "lat": 28.6539,
+      "long": 77.24900000000001,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "quality",
+      "labName": "BioTest Labs",
+      "parameter": "Purity",
+      "resultValue": "94%",
+      "ipfsHash": null,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "processing",
+      "stepName": "Packaging",
+      "facility": "Packaging Unit 4",
+      "details": "Packed in 140g pouches",
+      "timestamp": 1758481328097
+    }
+  ],
+  "BATCH5": [
+    {
+      "type": "collection",
+      "collector": "Farmer 5",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 28.6639,
+      "long": 77.259,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "quality",
+      "labName": "BioTest Labs",
+      "parameter": "Purity",
+      "resultValue": "93%",
+      "ipfsHash": null,
+      "timestamp": 1758481328097
+    },
+    {
+      "type": "processing",
+      "stepName": "Packaging",
+      "facility": "Packaging Unit 5",
+      "details": "Packed in 150g pouches",
+      "timestamp": 1758481328097
+    }
+  ],
+  "BATCH1758481359458": [
+    {
+      "type": "collection",
+      "timestamp": 1758481359458
+    }
+  ],
+  "BATCH-MFU2YYDO-3I2": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFU2YYDO-3I2",
+      "species": "Tulsi",
+      "quality": "High",
+      "lat": "89",
+      "long": "90.755",
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758482320524,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFU2YYDO-3I2",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFU2YYDO-3I2",
+        "species": "Tulsi",
+        "quality": "High",
+        "lat": "89",
+        "long": "90.755",
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758482320524,
+        "status": "pending"
+      },
+      "txHash": "0x999e47cda7b83",
+      "timestamp": 1758482320524
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFU2YYDO-3I2",
+      "facility": "kritika",
+      "facilityLocation": "greater noida",
+      "managerName": "rakesh",
+      "processType": "drying",
+      "processor": "processor1",
+      "timestamp": 1758482380322,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MFU2YYDO-3I2",
+      "labName": "mista",
+      "labManagerName": "hitesha",
+      "labLocation": "greater noida",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmdZ692kiHxAUsRrTL7vNxGvdWmT3ieikp9KSPyU5SroZR",
+      "lab": "lab1",
+      "timestamp": 1758482545468,
+      "status": "tested"
+    }
+  ]
+}

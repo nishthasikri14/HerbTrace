@@ -1,0 +1,13 @@
+{
+  "name": "traceability",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": { "node": ">=16", "npm": ">=7" },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "fabric-contract-api": "^2.5.4",
+    "fabric-shim": "^2.5.4"
+  }
+}
