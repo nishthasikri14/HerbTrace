@@ -19,9 +19,10 @@
     .form-group input, .form-group select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; box-sizing: border-box; }
     button { padding: 12px 20px; background: #2E8B57; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
     button:hover { background: #246b46; }
-    .batch-card { border-left: 4px solid #2E8B57; padding: 15px; margin: 15px 0; border-radius: 6px; background: #f7f9fb; }
+    .batch-card { border-left: 4px solid #2E8B57; padding: 15px; margin: 15px 0; border-radius: 12px; background: #f7f9fb; }
     .error { color: red; margin-bottom: 10px; font-weight: 500; }
     .success { color: green; margin-bottom: 10px; font-weight: 500; }
+    .muted { color:#4b5a4b; font-size:.95em; }
   </style>
 </head>
 <body>
@@ -49,21 +50,6 @@
     </div>
 
     <div class="form-group">
-      <label for="labName">Lab Name</label>
-      <input type="text" id="labName" placeholder="Enter lab name">
-    </div>
-
-    <div class="form-group">
-      <label for="labManagerName">Lab Manager Name</label>
-      <input type="text" id="labManagerName" placeholder="Enter lab manager name">
-    </div>
-
-    <div class="form-group">
-      <label for="labLocation">Lab Location</label>
-      <input type="text" id="labLocation" placeholder="Enter lab location">
-    </div>
-
-    <div class="form-group">
       <label for="resultStatus">Result Status</label>
       <select id="resultStatus">
         <option value="">Select result</option>
@@ -77,12 +63,35 @@
       <input type="file" id="reportFile" accept="application/pdf">
     </div>
 
-    <button onclick="uploadReport()">Submit Lab Report</button>
+    <div class="muted">Detected Location: <span id="latSpan">—</span>, <span id="longSpan">—</span></div>
+    <button id="btnSubmit">Submit Lab Report</button>
   </div>
 
   <script>
     const token = localStorage.getItem('token');
     if (!token) window.location.href = 'login.html';
+
+    function logout() { localStorage.clear(); window.location.href = 'login.html'; }
+    function showMsg(html, cls='') { document.getElementById('message').innerHTML = `<div class="${cls}">${html}</div>`; }
+
+    // Geo helper
+    async function getBrowserLocation(timeoutMs = 8000){
+      return new Promise((resolve) => {
+        if (!navigator.geolocation) return resolve(null);
+        navigator.geolocation.getCurrentPosition(
+          pos => resolve({ lat: pos.coords.latitude, long: pos.coords.longitude }),
+          () => resolve(null),
+          { enableHighAccuracy: true, maximumAge: 0, timeout: timeoutMs }
+        );
+      });
+    }
+
+    let cachedGeo = null;
+    async function refreshGeo(){
+      cachedGeo = await getBrowserLocation();
+      document.getElementById('latSpan').textContent = cachedGeo?.lat ?? '—';
+      document.getElementById('longSpan').textContent = cachedGeo?.long ?? '—';
+    }
 
     async function loadBatches() {
       const res = await fetch('/api/lab/dashboard', { headers: { 'Authorization': `Bearer ${token}` } });
@@ -94,7 +103,6 @@
 
       if (data.ok) {
         data.pending.forEach(batch => {
-          // Add card
           const div = document.createElement('div');
           div.className = 'batch-card';
           div.innerHTML = `<strong>Batch ID:</strong> ${batch.batchId}<br>
@@ -103,58 +111,57 @@
                            <strong>Processor:</strong> ${batch.processor || 'N/A'}`;
           container.appendChild(div);
 
-          // Add to select
           const opt = document.createElement('option');
           opt.value = batch.batchId;
           opt.textContent = batch.batchId;
           selectBatch.appendChild(opt);
         });
+      } else {
+        showMsg(data.error || 'Failed to load', 'error');
       }
     }
 
     async function uploadReport() {
       const batchId = document.getElementById('batchId').value;
-      const labName = document.getElementById('labName').value;
-      const labManagerName = document.getElementById('labManagerName').value;
-      const labLocation = document.getElementById('labLocation').value;
       const resultStatus = document.getElementById('resultStatus').value;
       const fileInput = document.getElementById('reportFile');
 
-      if (!batchId) return alert('Please select a batch');
-      if (!fileInput.files[0]) return alert('Please select a PDF file');
+      if (!batchId) return showMsg('Please select a batch', 'error');
+      if (!resultStatus) return showMsg('Please select a result status', 'error');
+      if (!fileInput.files[0]) return showMsg('Please select a PDF file', 'error');
 
-      const formData = new FormData();
-      formData.append('batchId', batchId);
-      formData.append('labName', labName);
-      formData.append('labManagerName', labManagerName);
-      formData.append('labLocation', labLocation);
-      formData.append('resultStatus', resultStatus);
-      formData.append('file', fileInput.files[0]);
+      // ensure we have freshest geo
+      if (!cachedGeo) await refreshGeo();
+
+      const fd = new FormData();
+      fd.append('batchId', batchId);
+      fd.append('resultStatus', resultStatus);
+      fd.append('file', fileInput.files[0]);
+      if (cachedGeo?.lat != null)  fd.append('lat', String(cachedGeo.lat));
+      if (cachedGeo?.long != null) fd.append('long', String(cachedGeo.long));
 
       const res = await fetch('/api/lab/upload-report', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
-        body: formData
+        body: fd
       });
-
       const data = await res.json();
-      const msgDiv = document.getElementById('message');
+
       if (data.ok) {
-        msgDiv.innerHTML = `<div class="success">Batch ${batchId} report uploaded successfully!</div>`;
-        loadBatches();
+        showMsg(`✅ <span class="success">Batch ${batchId} report uploaded successfully!</span>`, '');
         document.getElementById('reportFile').value = '';
+        document.getElementById('resultStatus').value = '';
+        await loadBatches();
       } else {
-        msgDiv.innerHTML = `<div class="error">${data.error}</div>`;
+        showMsg(data.error || 'Upload failed', 'error');
       }
     }
 
-    function logout() {
-      localStorage.clear();
-      window.location.href = 'login.html';
-    }
+    document.getElementById('btnSubmit').addEventListener('click', uploadReport);
 
+    // init
     loadBatches();
+    refreshGeo(); // triggers location prompt on localhost/https
   </script>
 </body>
 </html>
-

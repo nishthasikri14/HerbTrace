@@ -1,7 +1,7 @@
 require("dotenv").config();
 const { ethers } = require("ethers");
 
-const RPC_URL = process.env.RPC_URL || "http://127.0.0.1:7545";
+const RPC_URL = process.env.RPC_URL || "http://127.0.0.1:8545";
 const CONTRACT_ADDRESS = process.env.TRACE_CONTRACT;
 const PRIVATE_KEY = process.env.GANACHE_PK;
 

@@ -21,18 +21,17 @@ h1, h2, h3, h4 {
 
 /* ----- Logo Styling ----- */
 .logo {
-  font-family: "Poppins", "Inter", sans-serif;  /* clean, modern font */
+  font-family: "Poppins", "Inter", sans-serif;
   font-weight: 700;
-  font-size: 2rem;                              /* larger for prominence */
-  color: #2E8B57;                               /* keep brand green */
+  font-size: 2rem;
+  color: #2E8B57;
   letter-spacing: 1px;
   text-transform: uppercase;
   position: relative;
   cursor: pointer;
   transition: transform 0.25s ease, text-shadow 0.25s ease;
-  margin-left: -188px;   /* adjust the value to taste: -4px, -12px, etc. */
 
-
+  margin-left: 0; /* FIXED */
 }
 
 /* subtle shine/underline effect */

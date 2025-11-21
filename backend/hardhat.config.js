@@ -12,7 +12,7 @@ module.exports = {
   },
   networks: {
     ganache: {
-      url: process.env.RPC_URL || "http://127.0.0.1:7545",
+      url: process.env.RPC_URL || "http://127.0.0.1:8545",
       accounts: [process.env.GANACHE_PK],
     },
   },

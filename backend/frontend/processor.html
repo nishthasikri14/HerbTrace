@@ -19,9 +19,10 @@
     .form-group input, .form-group select { width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em; box-sizing: border-box; }
     button { padding: 12px 20px; background: #2E8B57; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
     button:hover { background: #246b46; }
-    .batch-card { border-left: 4px solid #2E8B57; padding: 15px; margin: 15px 0; border-radius: 6px; background: #f7f9fb; }
+    .batch-card { border-left: 4px solid #2E8B57; padding: 15px; margin: 15px 0; border-radius: 12px; background: #f7f9fb; }
     .error { color: red; margin-bottom: 10px; font-weight: 500; }
     .success { color: green; margin-bottom: 10px; font-weight: 500; }
+    .muted { color:#4b5a4b; font-size:.95em; }
   </style>
 </head>
 <body>
@@ -49,31 +50,39 @@
     </div>
 
     <div class="form-group">
-      <label for="facility">Facility Name</label>
-      <input type="text" id="facility" placeholder="Enter facility name">
-    </div>
-
-    <div class="form-group">
-      <label for="facilityLocation">Facility Location</label>
-      <input type="text" id="facilityLocation" placeholder="Enter location">
-    </div>
-
-    <div class="form-group">
-      <label for="managerName">Manager Name</label>
-      <input type="text" id="managerName" placeholder="Enter manager name">
-    </div>
-
-    <div class="form-group">
       <label for="processType">Process Type</label>
-      <input type="text" id="processType" placeholder="Enter process type">
+      <input type="text" id="processType" placeholder="Enter process type (e.g., Drying, Cleaning)">
     </div>
 
-    <button onclick="processBatch()">Process Batch</button>
+    <div class="muted">Detected Location: <span id="latSpan">—</span>, <span id="longSpan">—</span></div>
+    <button id="btnProcess">Process Batch</button>
   </div>
 
   <script>
     const token = localStorage.getItem('token');
     if (!token) window.location.href = 'login.html';
+
+    function logout() { localStorage.clear(); window.location.href = 'login.html'; }
+    function showMsg(html, cls='') { document.getElementById('message').innerHTML = `<div class="${cls}">${html}</div>`; }
+
+    // Geo helper
+    async function getBrowserLocation(timeoutMs = 8000){
+      return new Promise((resolve) => {
+        if (!navigator.geolocation) return resolve(null);
+        navigator.geolocation.getCurrentPosition(
+          pos => resolve({ lat: pos.coords.latitude, long: pos.coords.longitude }),
+          () => resolve(null),
+          { enableHighAccuracy: true, maximumAge: 0, timeout: timeoutMs }
+        );
+      });
+    }
+
+    let cachedGeo = null;
+    async function refreshGeo(){
+      cachedGeo = await getBrowserLocation();
+      document.getElementById('latSpan').textContent = cachedGeo?.lat ?? '—';
+      document.getElementById('longSpan').textContent = cachedGeo?.long ?? '—';
+    }
 
     async function loadBatches() {
       const res = await fetch('/api/processor/dashboard', { headers: { 'Authorization': `Bearer ${token}` } });
@@ -85,7 +94,6 @@
 
       if (data.ok) {
         data.pending.forEach(batch => {
-          // Add card
           const div = document.createElement('div');
           div.className = 'batch-card';
           div.innerHTML = `<strong>Batch ID:</strong> ${batch.batchId}<br>
@@ -94,50 +102,53 @@
                            <strong>Status:</strong> ${batch.status}`;
           container.appendChild(div);
 
-          // Add to select
           const opt = document.createElement('option');
           opt.value = batch.batchId;
           opt.textContent = batch.batchId;
           selectBatch.appendChild(opt);
         });
+      } else {
+        showMsg(data.error || 'Failed to load', 'error');
       }
     }
 
     async function processBatch() {
       const batchId = document.getElementById('batchId').value;
-      const facility = document.getElementById('facility').value;
-      const facilityLocation = document.getElementById('facilityLocation').value;
-      const managerName = document.getElementById('managerName').value;
-      const processType = document.getElementById('processType').value;
+      const processType = document.getElementById('processType').value.trim();
+      if (!batchId) return showMsg('Please select a batch', 'error');
+      if (!processType) return showMsg('Please enter a process type', 'error');
 
-      if (!batchId) return alert('Please select a batch');
+      // ensure we have freshest geo
+      if (!cachedGeo) await refreshGeo();
+
+      const body = {
+        batchId,
+        processType,
+        ...(cachedGeo?.lat != null && { lat: cachedGeo.lat }),
+        ...(cachedGeo?.long != null && { long: cachedGeo.long })
+      };
 
       const res = await fetch('/api/processor/process', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify({ batchId, facility, facilityLocation, managerName, processType })
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+        body: JSON.stringify(body)
       });
-
       const data = await res.json();
-      const msgDiv = document.getElementById('message');
+
       if (data.ok) {
-        msgDiv.innerHTML = `<div class="success">Batch ${batchId} processed successfully!</div>`;
-        loadBatches();
+        showMsg(`✅ <span class="success">Batch ${batchId} processed successfully!</span>`, '');
+        document.getElementById('processType').value = '';
+        await loadBatches();
       } else {
-        msgDiv.innerHTML = `<div class="error">${data.error}</div>`;
+        showMsg(data.error || 'Process failed', 'error');
       }
     }
 
-    function logout() {
-      localStorage.clear();
-      window.location.href = 'login.html';
-    }
+    document.getElementById('btnProcess').addEventListener('click', processBatch);
 
+    // init
     loadBatches();
+    refreshGeo(); // kicks off permission prompt on localhost/https
   </script>
 </body>
 </html>
-

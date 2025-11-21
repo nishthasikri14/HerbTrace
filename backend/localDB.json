@@ -1,28 +1,4 @@
 {
-  "BATCH_1758476558806_d28529": [
-    {
-      "type": "collection",
-      "timestamp": 1758476558807
-    }
-  ],
-  "BATCH_1758477420229_4e0910": [
-    {
-      "type": "collection",
-      "timestamp": 1758477420230
-    }
-  ],
-  "BATCH_1758477969309_47f273": [
-    {
-      "type": "collection",
-      "timestamp": 1758477969311
-    }
-  ],
-  "BATCH1758481129605": [
-    {
-      "type": "collection",
-      "timestamp": 1758481129605
-    }
-  ],
   "BATCH1": [
     {
       "type": "collection",
@@ -213,6 +189,2487 @@
       "lab": "lab1",
       "timestamp": 1758482545468,
       "status": "tested"
+    }
+  ],
+  "BATCH-MFU7H3CA-3ZT": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFU7H3CA-3ZT",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 0,
+      "long": 0,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758489885226,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFU7H3CA-3ZT",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFU7H3CA-3ZT",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 0,
+        "long": 0,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758489885226,
+        "status": "pending"
+      },
+      "txHash": "0x6ddf3c9c13e19",
+      "timestamp": 1758489885226
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFU7H3CA-3ZT",
+      "facility": "gh",
+      "facilityLocation": "hgj",
+      "managerName": "hgj",
+      "processType": "ggj",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1758530760197,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MFU7H3CA-3ZT",
+      "labName": "g",
+      "labManagerName": "f",
+      "labLocation": "fd",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmW6Prbx8n55UJJesigs84uiEJsp5zBxbLDT8mgPzC3kHV",
+      "lat": null,
+      "long": null,
+      "lab": "lab1",
+      "timestamp": 1758536025169,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MFU7H8FJ-4W6": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFU7H8FJ-4W6",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 0,
+      "long": 0,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758489891823,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFU7H8FJ-4W6",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFU7H8FJ-4W6",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 0,
+        "long": 0,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758489891823,
+        "status": "pending"
+      },
+      "txHash": "0xb7eb309b8f845",
+      "timestamp": 1758489891823
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFU7H8FJ-4W6",
+      "facility": "drying",
+      "facilityLocation": "noida",
+      "managerName": "mb",
+      "processType": "cb",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1758535847295,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MFU7H8FJ-4W6",
+      "labName": "g",
+      "labManagerName": "df",
+      "labLocation": "fvr",
+      "resultStatus": "pass",
+      "ipfsLink": null,
+      "lat": null,
+      "long": null,
+      "lab": "lab1",
+      "timestamp": 1758552795302,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MFU7JD8Q-1FK": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFU7JD8Q-1FK",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 78,
+      "long": 90,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758489991370,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFU7JD8Q-1FK",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFU7JD8Q-1FK",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 78,
+        "long": 90,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758489991370,
+        "status": "pending"
+      },
+      "txHash": "0x6393cd984a395",
+      "timestamp": 1758489991370
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFU7JD8Q-1FK",
+      "facility": "sxsx",
+      "facilityLocation": "cd",
+      "managerName": "xcs",
+      "processType": "xss",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1758532696410,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MFU7JD8Q-1FK",
+      "labName": "g",
+      "labManagerName": "huu",
+      "labLocation": "h8",
+      "resultStatus": "pass",
+      "ipfsLink": null,
+      "lat": null,
+      "long": null,
+      "lab": "lab1",
+      "timestamp": 1758552573568,
+      "status": "tested"
+    }
+  ],
+  "TEST-1": [
+    {
+      "type": "geo",
+      "batchId": "TEST-1",
+      "role": "farmer",
+      "context": "harvested",
+      "lat": 27.1751,
+      "long": 78.0421,
+      "accuracy": 10,
+      "timestamp": 1758490039033
+    }
+  ],
+  "BATCH-MFU7OUMD-4RA": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFU7OUMD-4RA",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 89,
+      "long": 90.755,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758490247173,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFU7OUMD-4RA",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFU7OUMD-4RA",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 89,
+        "long": 90.755,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758490247173,
+        "status": "pending"
+      },
+      "txHash": "0xa4dc334fb875d",
+      "timestamp": 1758490247173
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFU7OUMD-4RA",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "drying",
+      "processor": "processor1",
+      "lat": 28.44922817655757,
+      "long": 77.58440972784126,
+      "timestamp": 1763543410446,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MFU7OUMD-4RA",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "fail",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmeC1ACxD4RxMvGkj4a9j2CXeQ6TsN24RTdMSFjSRxD4pu",
+      "lat": 28.44925379602343,
+      "long": 77.58437675166633,
+      "lab": "lab1",
+      "timestamp": 1763545941955,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MFUMPRAQ-4OI": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUMPRAQ-4OI",
+      "species": "omicri",
+      "quality": "High",
+      "lat": 89.8999,
+      "long": 90.755,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758515483762,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUMPRAQ-4OI",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUMPRAQ-4OI",
+        "species": "omicri",
+        "quality": "High",
+        "lat": 89.8999,
+        "long": 90.755,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758515483762,
+        "status": "pending"
+      },
+      "txHash": "0x9e59af5c410f2",
+      "timestamp": 1758515483762
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFUMPRAQ-4OI",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "drying",
+      "processor": "processor1",
+      "lat": 28.449531571435568,
+      "long": 77.58392643330971,
+      "timestamp": 1763554376513,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUMPRAQ-4OI",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MFUMPRAQ-4OI",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "drying",
+        "processor": "processor1",
+        "lat": 28.449531571435568,
+        "long": 77.58392643330971,
+        "timestamp": 1763554376513,
+        "status": "processed"
+      },
+      "txHash": "0x0bfbd714ebb6c29445088cc1bff367e6abcde2e83099533f49455a609cd348d5",
+      "timestamp": 1763554376513
+    }
+  ],
+  "BATCH-MFUR55PO-29P": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUR55PO-29P",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 89.8999,
+      "long": 90.755,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1758522920748,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUR55PO-29P",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUR55PO-29P",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 89.8999,
+        "long": 90.755,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1758522920748,
+        "status": "pending"
+      },
+      "txHash": "0xd8ac5950ececd",
+      "timestamp": 1758522920748
+    }
+  ],
+  "BATCH-MFUR57EV-6EK": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUR57EV-6EK",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 89.8999,
+      "long": 90.755,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1758522922951,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUR57EV-6EK",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUR57EV-6EK",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 89.8999,
+        "long": 90.755,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1758522922951,
+        "status": "pending"
+      },
+      "txHash": "0xc79ee5b4838f6",
+      "timestamp": 1758522922951
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFUR57EV-6EK",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "djiedif",
+      "processor": "processor1",
+      "lat": 28.450120508754097,
+      "long": 77.58514027129785,
+      "timestamp": 1763550093216,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MFUR57EV-6EK",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmNb6Aowy8FtsmTUZw539rX6hFUu415fpMB7JL29ev8o1f",
+      "lat": null,
+      "long": null,
+      "lab": "lab1",
+      "timestamp": 1763550781826,
+      "status": "tested"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUR57EV-6EK",
+      "eventType": "QualityEvent",
+      "payload": {
+        "type": "quality",
+        "batchId": "BATCH-MFUR57EV-6EK",
+        "labName": "Punjab Quality Labs",
+        "labManagerName": "Dr. Meera Arora",
+        "labLocation": "Amritsar, Punjab",
+        "resultStatus": "pass",
+        "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmNb6Aowy8FtsmTUZw539rX6hFUu415fpMB7JL29ev8o1f",
+        "lat": null,
+        "long": null,
+        "lab": "lab1",
+        "timestamp": 1763550781826,
+        "status": "tested"
+      },
+      "txHash": "0xd7455280aa809e4ebd9708a56e6ef16e81307cb9a9ae4a48ff72396466590a08",
+      "timestamp": 1763550781826
+    }
+  ],
+  "BATCH-MFUR5849-1OI": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUR5849-1OI",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 89.8999,
+      "long": 90.755,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1758522923865,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUR5849-1OI",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUR5849-1OI",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 89.8999,
+        "long": 90.755,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1758522923865,
+        "status": "pending"
+      },
+      "txHash": "0x966f4d12bbfcb",
+      "timestamp": 1758522923865
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFUR5849-1OI",
+      "facility": "bbjk",
+      "facilityLocation": "hbb",
+      "managerName": "jhjkj",
+      "processType": "ghhjjh",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1758522968096,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MFUR5849-1OI",
+      "labName": "wejk",
+      "labManagerName": "awsnj",
+      "labLocation": "wej",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmeC1ACxD4RxMvGkj4a9j2CXeQ6TsN24RTdMSFjSRxD4pu",
+      "lat": null,
+      "long": null,
+      "lab": "lab1",
+      "timestamp": 1758523041027,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MFUVS5CZ-6GM": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUVS5CZ-6GM",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 89,
+      "long": 90.755,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758530711843,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUVS5CZ-6GM",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUVS5CZ-6GM",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 89,
+        "long": 90.755,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758530711843,
+        "status": "pending"
+      },
+      "txHash": "0xc457f95271bb2",
+      "timestamp": 1758530711843
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFUVS5CZ-6GM",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "drying",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1763550667672,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUVS5CZ-6GM",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MFUVS5CZ-6GM",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "drying",
+        "processor": "processor1",
+        "lat": null,
+        "long": null,
+        "timestamp": 1763550667672,
+        "status": "processed"
+      },
+      "txHash": "0x571158af5e5bd7a20298dc8336c70170208490d234630153ac5951c519a6743e",
+      "timestamp": 1763550667672
+    }
+  ],
+  "BATCH-MFUW0DF4-4M7": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUW0DF4-4M7",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 89.8999,
+      "long": 90.755,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758531095536,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUW0DF4-4M7",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUW0DF4-4M7",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 89.8999,
+        "long": 90.755,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758531095536,
+        "status": "pending"
+      },
+      "txHash": "0x68854c4224a99",
+      "timestamp": 1758531095536
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFUW0DF4-4M7",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "gvyg",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1763552896500,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUW0DF4-4M7",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MFUW0DF4-4M7",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "gvyg",
+        "processor": "processor1",
+        "lat": null,
+        "long": null,
+        "timestamp": 1763552896500,
+        "status": "processed"
+      },
+      "txHash": "0x800adf13d0ebda8daef9c4f3315dd8a9a00729b5ee9ef53f70940639605d5c3c",
+      "timestamp": 1763552896500
+    }
+  ],
+  "BATCH-MFUW0W7B-2Z5": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUW0W7B-2Z5",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 89.8999,
+      "long": 90.759,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758531119879,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUW0W7B-2Z5",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUW0W7B-2Z5",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 89.8999,
+        "long": 90.759,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758531119879,
+        "status": "pending"
+      },
+      "txHash": "0x9ad62146346d3",
+      "timestamp": 1758531119879
+    }
+  ],
+  "BATCH-MFUW1P46-60K": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUW1P46-60K",
+      "species": "Ashwagandha",
+      "quality": "Medium",
+      "lat": 89.8,
+      "long": 90.759,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758531157350,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUW1P46-60K",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUW1P46-60K",
+        "species": "Ashwagandha",
+        "quality": "Medium",
+        "lat": 89.8,
+        "long": 90.759,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758531157350,
+        "status": "pending"
+      },
+      "txHash": "0x6405be7f059db",
+      "timestamp": 1758531157350
+    }
+  ],
+  "BATCH-MFUX375J-3HB": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUX375J-3HB",
+      "species": "Ashwagandha",
+      "quality": "Medium",
+      "lat": 89,
+      "long": 90,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758532906999,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUX375J-3HB",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUX375J-3HB",
+        "species": "Ashwagandha",
+        "quality": "Medium",
+        "lat": 89,
+        "long": 90,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758532906999,
+        "status": "pending"
+      },
+      "txHash": "0xe199866be43a8",
+      "timestamp": 1758532906999
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFUX375J-3HB",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "deying",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1763554484131,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUX375J-3HB",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MFUX375J-3HB",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "deying",
+        "processor": "processor1",
+        "lat": null,
+        "long": null,
+        "timestamp": 1763554484131,
+        "status": "processed"
+      },
+      "txHash": "0xcf945afc0710f110f67e7ef5c12e2cad21eb469d85f0951f2340103a064da23a",
+      "timestamp": 1763554484131
+    }
+  ],
+  "BATCH-MFUXPLPN-3LC": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUXPLPN-3LC",
+      "collector": "Ram Singh",
+      "species": "Neem",
+      "quality": "Grade A",
+      "lat": 28.6139,
+      "long": 77.209,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758533952299,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUXPLPN-3LC",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUXPLPN-3LC",
+        "collector": "Ram Singh",
+        "species": "Neem",
+        "quality": "Grade A",
+        "lat": 28.6139,
+        "long": 77.209,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758533952299,
+        "status": "pending"
+      },
+      "txHash": "0xad30b64952fe4",
+      "timestamp": 1758533952299
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MFUXPLPN-3LC",
+      "facility": "drying",
+      "facilityLocation": "noida",
+      "managerName": "jhh",
+      "processType": "ni",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1758552498749,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MFUXPLPN-3LC",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmeC1ACxD4RxMvGkj4a9j2CXeQ6TsN24RTdMSFjSRxD4pu",
+      "lat": 28.449233397239844,
+      "long": 77.58445231460523,
+      "lab": "lab1",
+      "timestamp": 1763544484387,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MFUXQQY9-66B": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUXQQY9-66B",
+      "species": "Ashwagandha",
+      "quality": "Medium",
+      "lat": 89,
+      "long": 900,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758534005745,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUXQQY9-66B",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUXQQY9-66B",
+        "species": "Ashwagandha",
+        "quality": "Medium",
+        "lat": 89,
+        "long": 900,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758534005745,
+        "status": "pending"
+      },
+      "txHash": "0x8ae93dc1c3757",
+      "timestamp": 1758534005745
+    }
+  ],
+  "BATCH-MFUXS8ZK-1Q1": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUXS8ZK-1Q1",
+      "species": "Ashwagandha",
+      "quality": "Medium",
+      "lat": 89,
+      "long": 900,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758534075776,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUXS8ZK-1Q1",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUXS8ZK-1Q1",
+        "species": "Ashwagandha",
+        "quality": "Medium",
+        "lat": 89,
+        "long": 900,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758534075776,
+        "status": "pending"
+      },
+      "txHash": "0x7e070daffb7c8",
+      "timestamp": 1758534075776
+    }
+  ],
+  "BATCH-MFUYSDT7-2WE": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFUYSDT7-2WE",
+      "species": "Ashwagandha",
+      "quality": "High",
+      "lat": 89,
+      "long": 78,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1758535761643,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFUYSDT7-2WE",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFUYSDT7-2WE",
+        "species": "Ashwagandha",
+        "quality": "High",
+        "lat": 89,
+        "long": 78,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1758535761643,
+        "status": "pending"
+      },
+      "txHash": "0x9c7f9a138c1ab",
+      "timestamp": 1758535761643
+    }
+  ],
+  "BATCH-MFV8Q4AR-6D1": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MFV8Q4AR-6D1",
+      "species": "amla",
+      "quality": "Good",
+      "lat": 89,
+      "long": 78,
+      "imageLink": null,
+      "farmer": "farmer1",
+      "timestamp": 1758552452163,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MFV8Q4AR-6D1",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MFV8Q4AR-6D1",
+        "species": "amla",
+        "quality": "Good",
+        "lat": 89,
+        "long": 78,
+        "imageLink": null,
+        "farmer": "farmer1",
+        "timestamp": 1758552452163,
+        "status": "pending"
+      },
+      "txHash": "0x13598ba8abd36",
+      "timestamp": 1758552452163
+    }
+  ],
+  "BATCH-MG5381F1-7KZ": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG5381F1-7KZ",
+      "species": "Ashwagandha",
+      "lat": 28.449906560483438,
+      "long": 77.58480965857274,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1759147872301,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG5381F1-7KZ",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG5381F1-7KZ",
+        "species": "Ashwagandha",
+        "lat": 28.449906560483438,
+        "long": 77.58480965857274,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1759147872301,
+        "status": "pending"
+      },
+      "txHash": "0xc579fe8365327",
+      "timestamp": 1759147872301
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MG5381F1-7KZ",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1763554314598,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG5381F1-7KZ",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MG5381F1-7KZ",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "Drying",
+        "processor": "processor1",
+        "lat": null,
+        "long": null,
+        "timestamp": 1763554314598,
+        "status": "processed"
+      },
+      "txHash": "0x03542b12d6faca0dcb8559bcb92283e8647212d0d0802745c805a5908519a771",
+      "timestamp": 1763554314598
+    }
+  ],
+  "BATCH-MG538R21-1T2": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG538R21-1T2",
+      "species": "Ashwagandha",
+      "lat": 28.44989715000084,
+      "long": 77.58481742402725,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmT3j6T6yDALFTwcmGiy7HX9Sxzc2gaskpaEWXSqp7MpCo",
+      "farmer": "farmer1",
+      "timestamp": 1759147905529,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG538R21-1T2",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG538R21-1T2",
+        "species": "Ashwagandha",
+        "lat": 28.44989715000084,
+        "long": 77.58481742402725,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmT3j6T6yDALFTwcmGiy7HX9Sxzc2gaskpaEWXSqp7MpCo",
+        "farmer": "farmer1",
+        "timestamp": 1759147905529,
+        "status": "pending"
+      },
+      "txHash": "0x61884918b3951",
+      "timestamp": 1759147905529
+    }
+  ],
+  "BATCH-MG569I70-540": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG569I70-540",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.449895452021437,
+      "long": 77.58483526213034,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1759152979548,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG569I70-540",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG569I70-540",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.449895452021437,
+        "long": 77.58483526213034,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1759152979548,
+        "status": "pending"
+      },
+      "txHash": "0xf2d7be8156a79",
+      "timestamp": 1759152979548
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MG569I70-540",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.44992834116586,
+      "long": 77.58477266070118,
+      "timestamp": 1759155206171,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MG569I70-540",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmdZ692kiHxAUsRrTL7vNxGvdWmT3ieikp9KSPyU5SroZR",
+      "lat": 28.449929497264,
+      "long": 77.5847950629392,
+      "lab": "lab1",
+      "timestamp": 1759155499577,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MG56WS6X-2OH": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG56WS6X-2OH",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.449913855772518,
+      "long": 77.58484431996756,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmNXciLuFDhWtvysVLwX3zujvT55wJ4cAWK2LCoLUUso94",
+      "farmer": "farmer1",
+      "timestamp": 1759154065593,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG56WS6X-2OH",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG56WS6X-2OH",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.449913855772518,
+        "long": 77.58484431996756,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmNXciLuFDhWtvysVLwX3zujvT55wJ4cAWK2LCoLUUso94",
+        "farmer": "farmer1",
+        "timestamp": 1759154065593,
+        "status": "pending"
+      },
+      "txHash": "0x15fe29c496d88",
+      "timestamp": 1759154065593
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MG56WS6X-2OH",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "eskd",
+      "processor": "processor1",
+      "lat": null,
+      "long": null,
+      "timestamp": 1759154116263,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MG56WS6X-2OH",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/Qma6LSm72aStETu6Lv7VFhiNy63nr8m9hyy6ai7QEShbYt",
+      "lat": null,
+      "long": null,
+      "lab": "lab1",
+      "timestamp": 1759154154533,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MG58KFCZ-76L": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG58KFCZ-76L",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Amla",
+      "lat": 28.44994074027154,
+      "long": 77.58477547476545,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1759156848323,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG58KFCZ-76L",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG58KFCZ-76L",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Amla",
+        "lat": 28.44994074027154,
+        "long": 77.58477547476545,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1759156848323,
+        "status": "pending"
+      },
+      "txHash": "0xf34ae2a53bf41",
+      "timestamp": 1759156848323
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MG58KFCZ-76L",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "eskd",
+      "processor": "processor1",
+      "lat": 28.44994074113175,
+      "long": 77.58477547393197,
+      "timestamp": 1759156906709,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MG58KFCZ-76L",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmZsvr7esyeu5UFPVCCqsUFjcY8ULb9QatdDKN17gREjRF",
+      "lat": 28.44988457646256,
+      "long": 77.58484066605308,
+      "lab": "lab1",
+      "timestamp": 1759156968047,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MG59T7AR-656": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG59T7AR-656",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.449939484268317,
+      "long": 77.58486831427818,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1759158937395,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG59T7AR-656",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG59T7AR-656",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.449939484268317,
+        "long": 77.58486831427818,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1759158937395,
+        "status": "pending"
+      },
+      "txHash": "0x55186781a5d46",
+      "timestamp": 1759158937395
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MG59T7AR-656",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.44993758925274,
+      "long": 77.58488320356959,
+      "timestamp": 1759159006519,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MG59T7AR-656",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "fail",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmW6Prbx8n55UJJesigs84uiEJsp5zBxbLDT8mgPzC3kHV",
+      "lat": 28.449937587816457,
+      "long": 77.58488323612917,
+      "lab": "lab1",
+      "timestamp": 1759159060653,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MG5AVCLX-2VM": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG5AVCLX-2VM",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.449927314122803,
+      "long": 77.58477251871255,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1759160717205,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG5AVCLX-2VM",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG5AVCLX-2VM",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.449927314122803,
+        "long": 77.58477251871255,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1759160717205,
+        "status": "pending"
+      },
+      "txHash": "0xf6824f3689f57",
+      "timestamp": 1759160717205
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MG5AVCLX-2VM",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "DRYING",
+      "processor": "processor1",
+      "lat": 28.44992087118463,
+      "long": 77.58481007187052,
+      "timestamp": 1759160784980,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MG5AVCLX-2VM",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmW6Prbx8n55UJJesigs84uiEJsp5zBxbLDT8mgPzC3kHV",
+      "lat": 28.44993509034479,
+      "long": 77.58479507587451,
+      "lab": "lab1",
+      "timestamp": 1759160814884,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MG5BPXQS-4UP": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG5BPXQS-4UP",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.449914703269762,
+      "long": 77.58481195985173,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1759162144276,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG5BPXQS-4UP",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG5BPXQS-4UP",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.449914703269762,
+        "long": 77.58481195985173,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1759162144276,
+        "status": "pending"
+      },
+      "txHash": "0x01fa9c98b04fc",
+      "timestamp": 1759162144276
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MG5BPXQS-4UP",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.449916092927534,
+      "long": 77.58485466026289,
+      "timestamp": 1759162190967,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MG5BPXQS-4UP",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmW6Prbx8n55UJJesigs84uiEJsp5zBxbLDT8mgPzC3kHV",
+      "lat": 28.449916092718812,
+      "long": 77.58485465391267,
+      "lab": "lab1",
+      "timestamp": 1759162235823,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MG5CIWRM-5NG": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MG5CIWRM-5NG",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.449934542590412,
+      "long": 77.58479634763049,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1759163496035,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MG5CIWRM-5NG",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MG5CIWRM-5NG",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.449934542590412,
+        "long": 77.58479634763049,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1759163496035,
+        "status": "pending"
+      },
+      "txHash": "0x6665f3eecb8e8",
+      "timestamp": 1759163496035
+    }
+  ],
+  "BATCH-MI5SHHP1-5WD": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5SHHP1-5WD",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.449638888888888,
+      "long": 77.5846111111111,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPjNYMDzPwUiaGYMyx2tv5iZqahcJpPALK78NKDCVt2cG",
+      "farmer": "farmer1",
+      "timestamp": 1763543868373,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5SHHP1-5WD",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI5SHHP1-5WD",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.449638888888888,
+        "long": 77.5846111111111,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPjNYMDzPwUiaGYMyx2tv5iZqahcJpPALK78NKDCVt2cG",
+        "farmer": "farmer1",
+        "timestamp": 1763543868373,
+        "status": "pending"
+      },
+      "txHash": "0x34af3b9ec1253",
+      "timestamp": 1763543868373
+    }
+  ],
+  "BATCH-MI5VBVBV-1NT": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5VBVBV-1NT",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.450141862016967,
+      "long": 77.58515460045274,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmaDxeK1KtbiqbjZXBcKd9PGPkfLwHnozSNpiWVBB2GA8W",
+      "farmer": "farmer1",
+      "timestamp": 1763548644955,
+      "status": "pending"
+    }
+  ],
+  "BATCH-MI5VI5KM-4R6": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5VI5KM-4R6",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.45012447330355,
+      "long": 77.58515555812666,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmaDxeK1KtbiqbjZXBcKd9PGPkfLwHnozSNpiWVBB2GA8W",
+      "farmer": "farmer1",
+      "timestamp": 1763548938166,
+      "status": "pending"
+    }
+  ],
+  "BATCH-MI5VIC4C-6XK": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5VIC4C-6XK",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.45012447330355,
+      "long": 77.58515555812666,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmaDxeK1KtbiqbjZXBcKd9PGPkfLwHnozSNpiWVBB2GA8W",
+      "farmer": "farmer1",
+      "timestamp": 1763548946652,
+      "status": "pending"
+    }
+  ],
+  "BATCH-MI5VPG0C-1I5": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5VPG0C-1I5",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Neem",
+      "lat": 28.450116329899316,
+      "long": 77.58514046990837,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPkGTrEf7wtGf9gYRnCpU3DjQxeaGPR59v2NmyYmzEuJJ",
+      "farmer": "farmer1",
+      "timestamp": 1763549278284,
+      "status": "pending"
+    }
+  ],
+  "BATCH-MI5W1EGU-4G2": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5W1EGU-4G2",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Amla",
+      "lat": 28.450126453434212,
+      "long": 77.58515232569368,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1763549836158,
+      "status": "processed"
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI5W1EGU-4G2",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.449148530864665,
+      "long": 77.58351410683436,
+      "timestamp": 1763704158728,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5W1EGU-4G2",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MI5W1EGU-4G2",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "Drying",
+        "processor": "processor1",
+        "lat": 28.449148530864665,
+        "long": 77.58351410683436,
+        "timestamp": 1763704158728,
+        "status": "processed"
+      },
+      "txHash": "0xc2c724456be56edff38e6a974255b4c37584978680294ae387dfb4f05c82eee5",
+      "timestamp": 1763704158728
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MI5W1EGU-4G2",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmXVUJN9ukPVjrnzNACCR6Z5P9VTui4e4fHypF7EA9JMHP",
+      "lat": 28.449124737997995,
+      "long": 77.58338452856052,
+      "lab": "lab1",
+      "timestamp": 1763704193612,
+      "status": "tested"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5W1EGU-4G2",
+      "eventType": "QualityEvent",
+      "payload": {
+        "type": "quality",
+        "batchId": "BATCH-MI5W1EGU-4G2",
+        "labName": "Punjab Quality Labs",
+        "labManagerName": "Dr. Meera Arora",
+        "labLocation": "Amritsar, Punjab",
+        "resultStatus": "pass",
+        "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmXVUJN9ukPVjrnzNACCR6Z5P9VTui4e4fHypF7EA9JMHP",
+        "lat": 28.449124737997995,
+        "long": 77.58338452856052,
+        "lab": "lab1",
+        "timestamp": 1763704193612,
+        "status": "tested"
+      },
+      "txHash": "0xe3712c7f18fd9b1d73852cf4d4f05a7c7ae9ffce7eca9c44d44ad6c80d47fece",
+      "timestamp": 1763704193612
+    }
+  ],
+  "BATCH-MI5W7S2X-2YN": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5W7S2X-2YN",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": null,
+      "long": null,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPkGTrEf7wtGf9gYRnCpU3DjQxeaGPR59v2NmyYmzEuJJ",
+      "farmer": "farmer1",
+      "timestamp": 1763550133737,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5W7S2X-2YN",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI5W7S2X-2YN",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": null,
+        "long": null,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPkGTrEf7wtGf9gYRnCpU3DjQxeaGPR59v2NmyYmzEuJJ",
+        "farmer": "farmer1",
+        "timestamp": 1763550133737,
+        "status": "pending"
+      },
+      "txHash": "0xa9d6410ec74c660f814b75452bb54cb9e001bc8372aa21784c70be6cdcfaf7d7",
+      "timestamp": 1763550133737
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI5W7S2X-2YN",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.449116913463964,
+      "long": 77.58334314982021,
+      "timestamp": 1763702886351,
+      "status": "processed"
+    }
+  ],
+  "BATCH-MI5W918W-1KM": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5W918W-1KM",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Amla",
+      "lat": null,
+      "long": null,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmeLd7Ck5tZ5c3EYLD5uZ8QwY7oyuSf6ctH22VK2vhX1bv",
+      "farmer": "farmer1",
+      "timestamp": 1763550192272,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5W918W-1KM",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI5W918W-1KM",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Amla",
+        "lat": null,
+        "long": null,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmeLd7Ck5tZ5c3EYLD5uZ8QwY7oyuSf6ctH22VK2vhX1bv",
+        "farmer": "farmer1",
+        "timestamp": 1763550192272,
+        "status": "pending"
+      },
+      "txHash": "0x16b43e10e136314dabc477fea1be53ce2c6884126d673344ac472b1bd95e5186",
+      "timestamp": 1763550192272
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI5W918W-1KM",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.449217545691756,
+      "long": 77.58356843481636,
+      "timestamp": 1763703071190,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5W918W-1KM",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MI5W918W-1KM",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "Drying",
+        "processor": "processor1",
+        "lat": 28.449217545691756,
+        "long": 77.58356843481636,
+        "timestamp": 1763703071190,
+        "status": "processed"
+      },
+      "txHash": "0xe1421e6c8c9109abb1016c0dec5d7d97f650bb2835f6b86e435e9d94ee0dcec3",
+      "timestamp": 1763703071190
+    }
+  ],
+  "BATCH-MI5WHX9S-3UV": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5WHX9S-3UV",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Amla",
+      "lat": 28.450132830433795,
+      "long": 77.58516250712601,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmUtXyHundYmWdahnKBbHw3wAWmGbKBqWW8hK931QQdNcV",
+      "farmer": "farmer1",
+      "timestamp": 1763550607024,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5WHX9S-3UV",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI5WHX9S-3UV",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Amla",
+        "lat": 28.450132830433795,
+        "long": 77.58516250712601,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmUtXyHundYmWdahnKBbHw3wAWmGbKBqWW8hK931QQdNcV",
+        "farmer": "farmer1",
+        "timestamp": 1763550607024,
+        "status": "pending"
+      },
+      "txHash": "0xe1ba0886bc87971a3cc1b85a78d9e45b5fb7c2db31dcfe55b957d2e69ddddd34",
+      "timestamp": 1763550607024
+    }
+  ],
+  "BATCH-MI5YO9HP-267": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5YO9HP-267",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Neem",
+      "lat": 28.449499761051392,
+      "long": 77.5839131203211,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+      "farmer": "farmer1",
+      "timestamp": 1763554262029,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5YO9HP-267",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI5YO9HP-267",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Neem",
+        "lat": 28.449499761051392,
+        "long": 77.5839131203211,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmPVQpSsgXyp4hdimRWxXjdkCBtF9iqsxHjUsi54ijnuh2",
+        "farmer": "farmer1",
+        "timestamp": 1763554262029,
+        "status": "pending"
+      },
+      "txHash": "0x47c2435edae00791b990f4a969b41b51c3b6e0241504c8d7c38bdde9e5e4aa40",
+      "timestamp": 1763554262029
+    }
+  ],
+  "BATCH-MI5YRFMK-35V": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI5YRFMK-35V",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": null,
+      "long": null,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmaDxeK1KtbiqbjZXBcKd9PGPkfLwHnozSNpiWVBB2GA8W",
+      "farmer": "farmer1",
+      "timestamp": 1763554409949,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI5YRFMK-35V",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI5YRFMK-35V",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": null,
+        "long": null,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmaDxeK1KtbiqbjZXBcKd9PGPkfLwHnozSNpiWVBB2GA8W",
+        "farmer": "farmer1",
+        "timestamp": 1763554409949,
+        "status": "pending"
+      },
+      "txHash": "0x86d469041b145796a2593ce4c738d29d52878b5ecd95615b292defe743ac63bf",
+      "timestamp": 1763554409949
+    }
+  ],
+  "BATCH-MI7SEPNZ-3OV": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI7SEPNZ-3OV",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.45022174217887,
+      "long": 77.58517729752128,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmP3ERrjbAshaiB3FdJToS269LTCKrEu1XFs5ESdektvsy",
+      "farmer": "farmer1",
+      "timestamp": 1763664671087,
+      "status": "processed"
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI7SEPNZ-3OV",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.45022527752883,
+      "long": 77.58518739096704,
+      "timestamp": 1763664776119,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MI7SEPNZ-3OV",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmXVUJN9ukPVjrnzNACCR6Z5P9VTui4e4fHypF7EA9JMHP",
+      "lat": 28.450228731299955,
+      "long": 77.58518936612481,
+      "lab": "lab1",
+      "timestamp": 1763664826194,
+      "status": "tested"
+    }
+  ],
+  "BATCH-MI7SK9CZ-3ED": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI7SK9CZ-3ED",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.450218059631702,
+      "long": 77.58516510966766,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmViy8pX1NEe1U14tecoegb7QS45e5orMDEydBuHmHdEw8",
+      "farmer": "farmer1",
+      "timestamp": 1763664929891,
+      "status": "processed"
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI7SK9CZ-3ED",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.449237092206182,
+      "long": 77.58361722422978,
+      "timestamp": 1763704028279,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI7SK9CZ-3ED",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MI7SK9CZ-3ED",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "Drying",
+        "processor": "processor1",
+        "lat": 28.449237092206182,
+        "long": 77.58361722422978,
+        "timestamp": 1763704028279,
+        "status": "processed"
+      },
+      "txHash": "0x036cef0c63a1be421308aa858641ae15717c8658e566e658fbe246d87e7f9d4d",
+      "timestamp": 1763704028279
+    }
+  ],
+  "BATCH-MI7VHXFJ-2X5": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI7VHXFJ-2X5",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.450209927689517,
+      "long": 77.58517448682858,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmdMbii7HWSaRxj4dToLKtRoubVYUV2FJanZ26oHJeRPuH",
+      "farmer": "farmer1",
+      "timestamp": 1763669859967,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI7VHXFJ-2X5",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI7VHXFJ-2X5",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.450209927689517,
+        "long": 77.58517448682858,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmdMbii7HWSaRxj4dToLKtRoubVYUV2FJanZ26oHJeRPuH",
+        "farmer": "farmer1",
+        "timestamp": 1763669859967,
+        "status": "pending"
+      },
+      "txHash": "0xd68c48158c12e4a5a948fd62f73eb4208a3b21d72d104ba1ca9782ec72226383",
+      "timestamp": 1763669859967
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI7VHXFJ-2X5",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "du",
+      "processor": "processor1",
+      "lat": 28.450209927689517,
+      "long": 77.58517448682858,
+      "timestamp": 1763669891385,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MI7VHXFJ-2X5",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmXVUJN9ukPVjrnzNACCR6Z5P9VTui4e4fHypF7EA9JMHP",
+      "lat": 28.450226716927027,
+      "long": 77.5851792520875,
+      "lab": "lab1",
+      "timestamp": 1763669915947,
+      "status": "tested"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI7VHXFJ-2X5",
+      "eventType": "QualityEvent",
+      "payload": {
+        "type": "quality",
+        "batchId": "BATCH-MI7VHXFJ-2X5",
+        "labName": "Punjab Quality Labs",
+        "labManagerName": "Dr. Meera Arora",
+        "labLocation": "Amritsar, Punjab",
+        "resultStatus": "pass",
+        "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmXVUJN9ukPVjrnzNACCR6Z5P9VTui4e4fHypF7EA9JMHP",
+        "lat": 28.450226716927027,
+        "long": 77.5851792520875,
+        "lab": "lab1",
+        "timestamp": 1763669915947,
+        "status": "tested"
+      },
+      "txHash": "0xa0335061a6e7b1643049ae0fdd3a4bf912df67b9d6b3e234b6344fd2716112e7",
+      "timestamp": 1763669915947
+    }
+  ],
+  "BATCH-MI7XDGGB-5XL": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI7XDGGB-5XL",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.450232946170093,
+      "long": 77.58517746123005,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmWSx2RKv3N13yocoLaQz5LTMAEfXFR12XfD55WtrW3FHq",
+      "farmer": "farmer1",
+      "timestamp": 1763673010571,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI7XDGGB-5XL",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI7XDGGB-5XL",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.450232946170093,
+        "long": 77.58517746123005,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmWSx2RKv3N13yocoLaQz5LTMAEfXFR12XfD55WtrW3FHq",
+        "farmer": "farmer1",
+        "timestamp": 1763673010571,
+        "status": "pending"
+      },
+      "txHash": "0x479f25226a161760ba0135e35ba7eeda1c5144c7c97e52e40072c5ecf1a954a9",
+      "timestamp": 1763673010571
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI7XDGGB-5XL",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.450229685187228,
+      "long": 77.58518518542003,
+      "timestamp": 1763673062934,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MI7XDGGB-5XL",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmbbTb49GqHSoBtMNquR3jKjYPDAmx4MGRzaB9aqud825V",
+      "lat": 28.450223540410022,
+      "long": 77.58517077470367,
+      "lab": "lab1",
+      "timestamp": 1763673092394,
+      "status": "tested"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI7XDGGB-5XL",
+      "eventType": "QualityEvent",
+      "payload": {
+        "type": "quality",
+        "batchId": "BATCH-MI7XDGGB-5XL",
+        "labName": "Punjab Quality Labs",
+        "labManagerName": "Dr. Meera Arora",
+        "labLocation": "Amritsar, Punjab",
+        "resultStatus": "pass",
+        "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmbbTb49GqHSoBtMNquR3jKjYPDAmx4MGRzaB9aqud825V",
+        "lat": 28.450223540410022,
+        "long": 77.58517077470367,
+        "lab": "lab1",
+        "timestamp": 1763673092394,
+        "status": "tested"
+      },
+      "txHash": "0x849157870e86d695df817c8cb34da4028773ad29e55de8b4d9012babbcd067c4",
+      "timestamp": 1763673092394
+    }
+  ],
+  "BATCH-MI8BHC1N-6K2": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI8BHC1N-6K2",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Neem",
+      "lat": 28.450216974303373,
+      "long": 77.58518048747561,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmaYBGVTACWBZaLXYhfq6Nez6Yj5tmrjeQsVTpRQ4SycnR",
+      "farmer": "farmer1",
+      "timestamp": 1763696706107,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8BHC1N-6K2",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI8BHC1N-6K2",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Neem",
+        "lat": 28.450216974303373,
+        "long": 77.58518048747561,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmaYBGVTACWBZaLXYhfq6Nez6Yj5tmrjeQsVTpRQ4SycnR",
+        "farmer": "farmer1",
+        "timestamp": 1763696706107,
+        "status": "pending"
+      },
+      "txHash": "0xffc430d282e418ff959421a88dd0d173ae67bdefda5c8b1def297eac9400d32f",
+      "timestamp": 1763696706107
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI8BHC1N-6K2",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.450216974303373,
+      "long": 77.58518048747561,
+      "timestamp": 1763696734765,
+      "status": "processed"
+    },
+    {
+      "type": "quality",
+      "batchId": "BATCH-MI8BHC1N-6K2",
+      "labName": "Punjab Quality Labs",
+      "labManagerName": "Dr. Meera Arora",
+      "labLocation": "Amritsar, Punjab",
+      "resultStatus": "pass",
+      "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmXVUJN9ukPVjrnzNACCR6Z5P9VTui4e4fHypF7EA9JMHP",
+      "lat": 28.45022670945407,
+      "long": 77.5851748076287,
+      "lab": "lab1",
+      "timestamp": 1763696757811,
+      "status": "tested"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8BHC1N-6K2",
+      "eventType": "QualityEvent",
+      "payload": {
+        "type": "quality",
+        "batchId": "BATCH-MI8BHC1N-6K2",
+        "labName": "Punjab Quality Labs",
+        "labManagerName": "Dr. Meera Arora",
+        "labLocation": "Amritsar, Punjab",
+        "resultStatus": "pass",
+        "ipfsLink": "https://gateway.pinata.cloud/ipfs/QmXVUJN9ukPVjrnzNACCR6Z5P9VTui4e4fHypF7EA9JMHP",
+        "lat": 28.45022670945407,
+        "long": 77.5851748076287,
+        "lab": "lab1",
+        "timestamp": 1763696757811,
+        "status": "tested"
+      },
+      "txHash": "0x890ff8be87326bab9d08ec7d889d8d27b5c9c90a32349ac2a4a5c886dc5ce5fe",
+      "timestamp": 1763696757811
+    }
+  ],
+  "BATCH-MI8BZ81I-74G": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI8BZ81I-74G",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.449192519896073,
+      "long": 77.58367107222907,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmXYK4vxqVPwMSXsyfXaJ6dDyyvjcjnhcYPQwsVCfoqGwq",
+      "farmer": "farmer1",
+      "timestamp": 1763697540726,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8BZ81I-74G",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI8BZ81I-74G",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.449192519896073,
+        "long": 77.58367107222907,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmXYK4vxqVPwMSXsyfXaJ6dDyyvjcjnhcYPQwsVCfoqGwq",
+        "farmer": "farmer1",
+        "timestamp": 1763697540726,
+        "status": "pending"
+      },
+      "txHash": "0xe932734aa48b74bd71c1962002d7d38b351454083212885128295c3efec88889",
+      "timestamp": 1763697540726
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI8BZ81I-74G",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.449193547412374,
+      "long": 77.58367198126551,
+      "timestamp": 1763697621189,
+      "status": "processed"
+    }
+  ],
+  "BATCH-MI8FQE2H-5T7": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI8FQE2H-5T7",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Neem",
+      "lat": 28.448862024352604,
+      "long": 77.58310979534397,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmSggqK36mnJUASznQWWzCXgGdTGMY6RsYKKTdjLXC28Eh",
+      "farmer": "farmer1",
+      "timestamp": 1763703847097,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8FQE2H-5T7",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI8FQE2H-5T7",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Neem",
+        "lat": 28.448862024352604,
+        "long": 77.58310979534397,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmSggqK36mnJUASznQWWzCXgGdTGMY6RsYKKTdjLXC28Eh",
+        "farmer": "farmer1",
+        "timestamp": 1763703847097,
+        "status": "pending"
+      },
+      "txHash": "0xb20dbdcebbbebfa0b84e8e11ab7d3dbc66f4173f1091c573802ba442907230ac",
+      "timestamp": 1763703847097
+    },
+    {
+      "type": "processing",
+      "batchId": "BATCH-MI8FQE2H-5T7",
+      "facility": "Punjab Herb Processing Plant",
+      "facilityLocation": "Ludhiana, Punjab",
+      "managerName": "Rajesh Kumar",
+      "processType": "Drying",
+      "processor": "processor1",
+      "lat": 28.44919216215972,
+      "long": 77.58352431152527,
+      "timestamp": 1763703920652,
+      "status": "processed"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8FQE2H-5T7",
+      "eventType": "ProcessingEvent",
+      "payload": {
+        "type": "processing",
+        "batchId": "BATCH-MI8FQE2H-5T7",
+        "facility": "Punjab Herb Processing Plant",
+        "facilityLocation": "Ludhiana, Punjab",
+        "managerName": "Rajesh Kumar",
+        "processType": "Drying",
+        "processor": "processor1",
+        "lat": 28.44919216215972,
+        "long": 77.58352431152527,
+        "timestamp": 1763703920652,
+        "status": "processed"
+      },
+      "txHash": "0x020637a66c8321a6958796827d0a5dba7d1f8850a7751c1ae527dd3a799e025d",
+      "timestamp": 1763703920652
+    }
+  ],
+  "BATCH-MI8H7MGG-5ZD": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI8H7MGG-5ZD",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Amla",
+      "lat": 28.449268290073885,
+      "long": 77.58377123024012,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmXYK4vxqVPwMSXsyfXaJ6dDyyvjcjnhcYPQwsVCfoqGwq",
+      "farmer": "farmer1",
+      "timestamp": 1763706330736,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8H7MGG-5ZD",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI8H7MGG-5ZD",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Amla",
+        "lat": 28.449268290073885,
+        "long": 77.58377123024012,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmXYK4vxqVPwMSXsyfXaJ6dDyyvjcjnhcYPQwsVCfoqGwq",
+        "farmer": "farmer1",
+        "timestamp": 1763706330736,
+        "status": "pending"
+      },
+      "txHash": "0x988e9e3a20ea421b8e2836451173234e9956652b5956755fec5d56750b3aff95",
+      "timestamp": 1763706330736
+    }
+  ],
+  "BATCH-MI8IIJQU-2JY": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI8IIJQU-2JY",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.44914417064844,
+      "long": 77.58344368263529,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmUZJR7GerBFKDnWk6EvHBKCfC8AmXLX7yotryKfTHk38m",
+      "farmer": "farmer1",
+      "timestamp": 1763708520054,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8IIJQU-2JY",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI8IIJQU-2JY",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.44914417064844,
+        "long": 77.58344368263529,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmUZJR7GerBFKDnWk6EvHBKCfC8AmXLX7yotryKfTHk38m",
+        "farmer": "farmer1",
+        "timestamp": 1763708520054,
+        "status": "pending"
+      },
+      "txHash": "0x86caf14696e4b962b72561824d760a9767a3f8bd807d33a54e7b62f7731ee3af",
+      "timestamp": 1763708520054
+    }
+  ],
+  "BATCH-MI8ILA1V-7DP": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI8ILA1V-7DP",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Tulsi",
+      "lat": 28.449175331346705,
+      "long": 77.58355766797469,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmUZJR7GerBFKDnWk6EvHBKCfC8AmXLX7yotryKfTHk38m",
+      "farmer": "farmer1",
+      "timestamp": 1763708647459,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8ILA1V-7DP",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI8ILA1V-7DP",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Tulsi",
+        "lat": 28.449175331346705,
+        "long": 77.58355766797469,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmUZJR7GerBFKDnWk6EvHBKCfC8AmXLX7yotryKfTHk38m",
+        "farmer": "farmer1",
+        "timestamp": 1763708647459,
+        "status": "pending"
+      },
+      "txHash": "0x862c080d5708247035987cc23c81b9e28c3e6e11a0dcb812a368ece48fbf7d07",
+      "timestamp": 1763708647459
+    }
+  ],
+  "BATCH-MI8JH7LX-3QV": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI8JH7LX-3QV",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Amla",
+      "lat": 28.449237134041933,
+      "long": 77.58371540168132,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmUZJR7GerBFKDnWk6EvHBKCfC8AmXLX7yotryKfTHk38m",
+      "farmer": "farmer1",
+      "timestamp": 1763710137285,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8JH7LX-3QV",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI8JH7LX-3QV",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Amla",
+        "lat": 28.449237134041933,
+        "long": 77.58371540168132,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmUZJR7GerBFKDnWk6EvHBKCfC8AmXLX7yotryKfTHk38m",
+        "farmer": "farmer1",
+        "timestamp": 1763710137285,
+        "status": "pending"
+      },
+      "txHash": "0x95a6bb72fb51359746c43bc36e3498eac5aed0003ffe4c06e87941de768f275e",
+      "timestamp": 1763710137285
+    }
+  ],
+  "BATCH-MI8ZBHAV-3QS": [
+    {
+      "type": "collection",
+      "batchId": "BATCH-MI8ZBHAV-3QS",
+      "collector": "Gurpreet Singh",
+      "farmLocation": "Moga, Punjab",
+      "species": "Ashwagandha",
+      "lat": 28.450028,
+      "long": 77.584834,
+      "imageLink": "https://gateway.pinata.cloud/ipfs/QmUZJR7GerBFKDnWk6EvHBKCfC8AmXLX7yotryKfTHk38m",
+      "farmer": "farmer1",
+      "timestamp": 1763736743768,
+      "status": "pending"
+    },
+    {
+      "type": "onchain",
+      "batchId": "BATCH-MI8ZBHAV-3QS",
+      "eventType": "CollectionEvent",
+      "payload": {
+        "type": "collection",
+        "batchId": "BATCH-MI8ZBHAV-3QS",
+        "collector": "Gurpreet Singh",
+        "farmLocation": "Moga, Punjab",
+        "species": "Ashwagandha",
+        "lat": 28.450028,
+        "long": 77.584834,
+        "imageLink": "https://gateway.pinata.cloud/ipfs/QmUZJR7GerBFKDnWk6EvHBKCfC8AmXLX7yotryKfTHk38m",
+        "farmer": "farmer1",
+        "timestamp": 1763736743768,
+        "status": "pending"
+      },
+      "txHash": "0x6ad3df07f5ba9e1a88832d94ae13cf8ba13ea749e09220b530ee4506a7d7f901",
+      "timestamp": 1763736743768
     }
   ]
 }

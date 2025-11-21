@@ -11,11 +11,15 @@
     "bcryptjs": "^3.0.2",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "ethers": "^5.8.0",
     "express": "^4.21.2",
     "fabric-ca-client": "^2.2.19",
     "fabric-network": "^2.2.19",
+    "fs": "^0.0.1-security",
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.2",
+    "path": "^0.12.7",
     "qrcode": "^1.5.4"
   },
   "devDependencies": {

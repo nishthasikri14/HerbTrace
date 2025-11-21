@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Farmer Dashboard — HerbTrace</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Farmer Quick Capture — HerbTrace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Keep your original CSS palette & layout -->
   <style>
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f1f8e9; margin: 0; }
     nav { background: #2E8B57; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
@@ -11,6 +13,11 @@
     .nav-links { list-style: none; display: flex; gap: 15px; margin: 0; }
     .nav-links li a { color: white; text-decoration: none; font-weight: 500; }
     .nav-links li a:hover { text-decoration: underline; }
+
+    /* NEW: immutable farmer info bar */
+    .farmer-bar { background: #e8f5e9; border-bottom: 1px solid #cde4cf; color: #1f4d2f; }
+    .farmer-bar .wrap { max-width: 900px; margin: 0 auto; padding: 10px 20px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .pill { background:#d6efd8; border:1px solid #b5dbb8; padding:6px 10px; border-radius:999px; font-weight:600; }
 
     .container { max-width: 900px; margin: 30px auto; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
     h2 { color: #2E8B57; text-align: center; margin-bottom: 25px; }
@@ -22,132 +29,280 @@
     .batch-card { border-left: 4px solid #2E8B57; padding: 15px; margin: 15px 0; border-radius: 6px; background: #f7f9fb; }
     .error { color: red; margin-bottom: 10px; font-weight: 500; }
     .success { color: green; margin-bottom: 10px; font-weight: 500; }
+
+    /* tiny helpers to fit your style */
+    .row { display: grid; grid-template-columns: 140px 1fr; gap: 8px; }
+    .inline { display: flex; gap: 10px; flex-wrap: wrap; }
+    .muted { color: #4b5a4b; font-size: 0.95em; }
+    .hidden { display: none; }
+    .preview-img { width: 120px; height: 120px; object-fit: cover; border-radius: 8px; border: 1px solid #d9e3d9; }
   </style>
+
+  <!-- EXIF parser to read timestamp & GPS from captured image -->
+  <script src="https://unpkg.com/exifr/dist/full.umd.js"></script>
 </head>
 <body>
   <nav>
     <div class="nav-container">
       <div class="logo">HerbTrace</div>
       <ul class="nav-links">
-        <li><a href="farmer.html">Dashboard</a></li>
+        <li><a href="/farmer-quick-capture">Quick Capture</a></li>
         <li><a href="#" onclick="logout()">Logout</a></li>
       </ul>
     </div>
   </nav>
 
+  <!-- NEW: immutable farmer info bar -->
+  <div class="farmer-bar">
+    <div class="wrap">
+      <span class="pill">Farmer: <span id="farmerName">Gurpreet Singh</span></span>
+      <span class="pill">Farm Location: <span id="farmLocation">Moga, Punjab</span></span>
+      <span class="muted">These details are fixed and will be sent with every submission.</span>
+    </div>
+  </div>
+
   <div class="container">
-    <h2>Farmer Dashboard</h2>
+    <h2>Farmer Quick Capture</h2>
 
     <div id="message"></div>
 
-    <h3>Add New Herb Collection</h3>
+    <!-- Two inputs only: species + camera -->
     <div class="form-group">
       <label for="species">Species</label>
       <select id="species">
         <option value="Ashwagandha">Ashwagandha</option>
         <option value="Tulsi">Tulsi</option>
+        <option value="Amla">Amla</option>
+        <option value="Neem">Neem</option>
         <option value="other">Other</option>
       </select>
     </div>
 
-    <div class="form-group" id="otherSpeciesDiv" style="display:none;">
+    <div class="form-group hidden" id="otherSpeciesWrap">
       <label for="otherSpecies">Specify Species</label>
       <input type="text" id="otherSpecies" placeholder="Enter species">
     </div>
 
     <div class="form-group">
-      <label for="quality">Quality</label>
-      <select id="quality">
-        <option value="High">High</option>
-        <option value="Medium">Medium</option>
-        <option value="Good">Good</option>
-      </select>
+      <label>Take Photo</label>
+      <input id="camera" type="file" accept="image/*" capture="environment" />
+      <div class="muted">Tip: Use your phone and allow camera & location so GPS is embedded in the photo.</div>
     </div>
 
-    <div class="form-group">
-      <label for="lat">Latitude</label>
-      <input type="text" id="lat" placeholder="Enter latitude">
+    <!-- Preview + auto-extracted metadata -->
+    <div id="previewCard" class="batch-card hidden">
+      <div class="inline">
+        <img id="thumb" class="preview-img" alt="preview" />
+        <div>
+          <div class="row"><div><strong>Time</strong></div><div id="metaTime">—</div></div>
+          <div class="row"><div><strong>Latitude</strong></div><div id="metaLat">—</div></div>
+          <div class="row"><div><strong>Longitude</strong></div><div id="metaLong">—</div></div>
+          <div class="row"><div><strong>From EXIF?</strong></div><div id="metaExif">—</div></div>
+        </div>
+      </div>
     </div>
 
-    <div class="form-group">
-      <label for="long">Longitude</label>
-      <input type="text" id="long" placeholder="Enter longitude">
+    <div class="inline">
+      <button id="btnSave" disabled>Save Batch</button>
+      <button id="btnReset" class="hidden" style="background:#6b7f6b;">Choose another photo</button>
     </div>
-
-    <div class="form-group">
-      <label for="image">Upload Image (optional)</label>
-      <input type="file" id="image">
-    </div>
-
-    <button onclick="addHerb()">Add Collection</button>
-
-    <div id="batches"></div>
   </div>
 
   <script>
-    const token = localStorage.getItem('token');
-    if (!token) window.location.href = 'login.html';
+    // ===== Immutable Farmer Data (shown + sent every submit) =====
+    const IMMUTABLE_FARMER_NAME = "Gurpreet Singh";
+    const IMMUTABLE_FARM_LOCATION = "Moga, Punjab";
 
-    // Show other species input
-    document.getElementById('species').addEventListener('change', () => {
-      if (document.getElementById('species').value === 'other') document.getElementById('otherSpeciesDiv').style.display = 'block';
-      else document.getElementById('otherSpeciesDiv').style.display = 'none';
+    // Auth gate (matches your backend: /login route serves login.html)
+    (function ensureAuth(){
+      const token = localStorage.getItem('token');
+      if (!token) window.location.href = '/login';
+      // Render immutable labels (just in case you change constants above)
+      document.getElementById('farmerName').textContent = IMMUTABLE_FARMER_NAME;
+      document.getElementById('farmLocation').textContent = IMMUTABLE_FARM_LOCATION;
+    })();
+
+    function logout(){
+      localStorage.clear();
+      window.location.href = '/login';
+    }
+
+    function authHeader() {
+      const token = localStorage.getItem('token');
+      return token ? { 'Authorization': `Bearer ${token}` } : {};
+    }
+    function showMsg(html, type='') {
+      document.getElementById('message').innerHTML = `<div class="${type}">${html}</div>`;
+    }
+
+    // d/m/s to decimal degrees
+    function dmsToDecimal(dms, ref){
+      if (!dms) return null;
+      const [deg, min, sec] = dms;
+      let dec = deg + (min/60) + (sec/3600);
+      if (ref === 'S' || ref === 'W') dec = -dec;
+      return dec;
+    }
+
+    // geolocation fallback (if EXIF GPS is missing)
+    function getBrowserLocation(timeoutMs = 8000){
+      return new Promise((resolve) => {
+        if (!navigator.geolocation) return resolve(null);
+        navigator.geolocation.getCurrentPosition(
+          pos => resolve({ lat: pos.coords.latitude, long: pos.coords.longitude, source: 'browser' }),
+          () => resolve(null),
+          { enableHighAccuracy: true, maximumAge: 0, timeout: timeoutMs }
+        );
+      });
+    }
+
+    // Elements
+    const speciesSel = document.getElementById('species');
+    const otherWrap  = document.getElementById('otherSpeciesWrap');
+    const otherInput = document.getElementById('otherSpecies');
+
+    const camera    = document.getElementById('camera');
+    const preview   = document.getElementById('previewCard');
+    const thumb     = document.getElementById('thumb');
+
+    const metaTime  = document.getElementById('metaTime');
+    const metaLat   = document.getElementById('metaLat');
+    const metaLong  = document.getElementById('metaLong');
+    const metaExif  = document.getElementById('metaExif');
+
+    const btnSave   = document.getElementById('btnSave');
+    const btnReset  = document.getElementById('btnReset');
+
+    speciesSel.addEventListener('change', () => {
+      otherWrap.classList.toggle('hidden', speciesSel.value !== 'other');
     });
 
-    async function addHerb() {
-      const species = document.getElementById('species').value;
-      const otherSpecies = document.getElementById('otherSpecies').value;
-      const quality = document.getElementById('quality').value;
-      const lat = document.getElementById('lat').value;
-      const long = document.getElementById('long').value;
-      const imageFile = document.getElementById('image').files[0];
-      const formData = new FormData();
-      formData.append('species', species);
-      formData.append('otherSpecies', otherSpecies);
-      formData.append('quality', quality);
-      formData.append('lat', lat);
-      formData.append('long', long);
-      if (imageFile) formData.append('image', imageFile);
+    let chosenFile = null;
+    let extracted  = { timestamp: null, lat: null, long: null, exifPresent: false };
 
-      const res = await fetch('/api/farmer/add-herb', {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${token}` },
-        body: formData
-      });
-      const data = await res.json();
-      const msgDiv = document.getElementById('message');
-      if (data.ok) {
-        msgDiv.innerHTML = `<div class="success">Batch Added! ID: ${data.batchId}</div>`;
-        loadBatches();
-      } else {
-        msgDiv.innerHTML = `<div class="error">${data.error}</div>`;
+    camera.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      chosenFile = file;
+      // Show image preview
+      thumb.src = URL.createObjectURL(file);
+      preview.classList.remove('hidden');
+      btnSave.disabled = true;
+      btnReset.classList.add('hidden');
+      showMsg('Reading photo metadata…', 'muted');
+
+      try {
+        // Extract EXIF (time + GPS)
+        const output = await exifr.parse(file, { gps: true, tiff: true, ifd0: true, exif: true });
+
+        const exifTime = output?.DateTimeOriginal || output?.CreateDate || output?.ModifyDate;
+        const lat      = dmsToDecimal(output?.GPSLatitude, output?.GPSLatitudeRef);
+        const long     = dmsToDecimal(output?.GPSLongitude, output?.GPSLongitudeRef);
+
+        extracted.exifPresent = Boolean(exifTime || (lat && long));
+        extracted.timestamp   = exifTime ? new Date(exifTime).toISOString() : null;
+        extracted.lat         = lat ?? null;
+        extracted.long        = long ?? null;
+
+        // Fallback to browser geolocation if GPS not present
+        if (extracted.lat == null || extracted.long == null) {
+          const geo = await getBrowserLocation();
+          if (geo) { extracted.lat = geo.lat; extracted.long = geo.long; }
+        }
+        // Fallback timestamp (file lastModified or now)
+        if (!extracted.timestamp && file.lastModified) {
+          extracted.timestamp = new Date(file.lastModified).toISOString();
+        }
+        if (!extracted.timestamp) {
+          extracted.timestamp = new Date().toISOString();
+        }
+
+        // Render metadata
+        metaTime.textContent = new Date(extracted.timestamp).toLocaleString();
+        metaLat.textContent  = extracted.lat ?? '—';
+        metaLong.textContent = extracted.long ?? '—';
+        metaExif.textContent = extracted.exifPresent ? 'Yes' : 'Partially/No (fallback)';
+
+        btnSave.disabled = false;
+        showMsg('', '');
+      } catch (err) {
+        console.error(err);
+        // Still allow saving; use browser time/location
+        const geo = await getBrowserLocation();
+        if (geo) { extracted.lat = geo.lat; extracted.long = geo.long; }
+        extracted.timestamp = new Date().toISOString();
+
+        metaTime.textContent = new Date(extracted.timestamp).toLocaleString();
+        metaLat.textContent  = extracted.lat ?? '—';
+        metaLong.textContent = extracted.long ?? '—';
+        metaExif.textContent = 'No (fallback)';
+
+        btnSave.disabled = false;
+        showMsg('Could not read EXIF; using browser time/location as fallback.', 'error');
       }
-    }
+    });
 
-    async function loadBatches() {
-      const res = await fetch('/api/processor/dashboard', { headers: { 'Authorization': `Bearer ${token}` } });
-      const data = await res.json();
-      const container = document.getElementById('batches');
-      container.innerHTML = '';
-      if (data.ok) {
-        data.pending.forEach(batch => {
-          const div = document.createElement('div');
-          div.className = 'batch-card';
-          div.innerHTML = `<strong>Batch ID:</strong> ${batch.batchId}<br>
-                           <strong>Species:</strong> ${batch.species}<br>
-                           <strong>Quality:</strong> ${batch.quality}<br>
-                           <strong>Status:</strong> ${batch.status}`;
-          container.appendChild(div);
+    btnReset.addEventListener('click', () => {
+      camera.value = '';
+      chosenFile = null;
+      preview.classList.add('hidden');
+      metaTime.textContent = metaLat.textContent = metaLong.textContent = metaExif.textContent = '—';
+      btnSave.disabled = true;
+      showMsg('', '');
+    });
+
+    btnSave.addEventListener('click', async () => {
+      try {
+        if (!chosenFile) return showMsg('Please take or choose a photo first.', 'error');
+
+        btnSave.disabled = true;
+        showMsg('Uploading image & saving batch…', 'muted');
+
+        // Build FormData exactly as your backend expects
+        const fd = new FormData();
+        const species = speciesSel.value;
+        fd.append('species', species);
+        if (species === 'other') fd.append('otherSpecies', (otherInput.value || 'Unknown'));
+
+        // Append immutable farmer details for on-chain storage
+        fd.append('collector', IMMUTABLE_FARMER_NAME);      // your backend already stores 'collector'
+        fd.append('farmLocation', IMMUTABLE_FARM_LOCATION); // small backend tweak to persist this (see note)
+
+        if (extracted.lat != null)  fd.append('lat',  String(extracted.lat));
+        if (extracted.long != null) fd.append('long', String(extracted.long));
+        // Optional extras
+        fd.append('timestamp', extracted.timestamp);
+        fd.append('exifPresent', String(!!extracted.exifPresent));
+
+        // Attach image file under field name 'image' (multer reads this)
+        fd.append('image', chosenFile, chosenFile.name || 'photo.jpg');
+
+        const resp = await fetch('/api/farmer/add-herb', {
+          method: 'POST',
+          headers: { ...authHeader() }, // Do not set Content-Type manually for FormData
+          body: fd
         });
+        const data = await resp.json();
+
+        if (!resp.ok || !data.ok) {
+          throw new Error(data?.error || 'Failed to save batch');
+        }
+
+        const imageLink = data?.event?.imageLink
+          ? ` — <a target="_blank" href="${data.event.imageLink}">Photo on IPFS</a>`
+          : '';
+        const provLink = `<a target="_blank" href="/provenance/${data.batchId}">View provenance</a>`;
+
+        showMsg(`✅ <span class="success">Batch Added!</span> ID: <strong>${data.batchId}</strong>${imageLink} · ${provLink}`);
+        btnSave.disabled = false;
+        btnReset.classList.remove('hidden');
+      } catch (err) {
+        console.error(err);
+        showMsg('Save failed: ' + (err?.message || err), 'error');
+        btnSave.disabled = false;
       }
-    }
-
-    function logout() {
-      localStorage.clear();
-      window.location.href = 'login.html';
-    }
-
-    loadBatches();
+    });
   </script>
 </body>
 </html>
