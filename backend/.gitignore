@@ -13,5 +13,20 @@ node_modules
 /coverage
 /coverage.json
 
-# Hardhat Ignition default folder for deployments against a local node
+# Hardhat Ignition default folder for deployments
 ignition/deployments/chain-31337
+
+# Geo server
+geo-server/node_modules/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Uploads & secrets
+uploads/
+wallet/
